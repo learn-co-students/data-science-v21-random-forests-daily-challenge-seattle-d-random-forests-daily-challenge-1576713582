@@ -1,15 +1,14 @@
-
-## Ensemble Methods [Suggested Time: 20 minutes]
+# Ensemble Methods
 
 ### Introduction to Ensemble Methods
 
-**2.1) Explain how the random forest algorithm works. Why are random forests resilient to overfitting?**
+**1) Explain how the random forest algorithm works. Why are random forests resilient to overfitting?**
 
 _Hint: Your answer should discuss bagging and the subspace sampling method._
 
 
-```
-# Your answer here
+```python
+# Your written answer here
 ```
 
 ### Random Forests and Hyperparameter Tuning using GridSearchCV
@@ -21,7 +20,7 @@ After finding the best estimator, you will interpret the best model's feature im
 In the cells below, we have loaded the relevant imports and the wine data for you. 
 
 
-```
+```python
 # Relevant imports
 import pandas as pd 
 from sklearn.datasets import load_wine
@@ -38,33 +37,33 @@ df = pd.concat([X, y.to_frame()], axis=1)
 In the cells below, we inspect the first five rows of the dataframe and compute the dataframe's shape.
 
 
-```
+```python
 df.head()
 ```
 
 
-```
+```python
 df.shape
 ```
 
 We also get descriptive statistics for the dataset features, and obtain the distribution of classes in the dataset. 
 
 
-```
+```python
 X.describe()
 ```
 
 
-```
+```python
 y.value_counts().sort_index()
 ```
 
 You will now perform hyper-parameter tuning for a Random Forest classifier.
 
-**2.2) Construct a `param_grid` dictionary to pass to `GridSearchCV` when instantiating the object. Choose at least 3 hyper-parameters to tune and 3 values for each.** 
+**2) Construct a `param_grid` dictionary to pass to `GridSearchCV` when instantiating the object. Choose at least 3 hyper-parameters to tune and 3 values for each.** 
 
 
-```
+```python
 # Replace None with relevant code 
 param_grid = None
 ```
@@ -74,53 +73,52 @@ Now that you have created the `param_grid` dictionary of hyperparameters, let's 
 In the cell below, we include the relevant imports for you.
 
 
-```
+```python
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 ```
 
-**2.3) Create an instance of a Random Forest classifier estimator; call it `rfc`.** Make sure to set `random_state=42` for reproducibility. 
+**3) Create an instance of a Random Forest Classifier estimator; call it `rfc`.** Make sure to set `random_state=42` for reproducibility. 
 
 
-```
+```python
 # Replace None with appropriate code
 rfc = None
 ```
 
-**2.4) Create an instance of an `GridSearchCV` object and fit it to the data.** Call the instance `cv_rfc`. 
+**4) Create an instance of an `GridSearchCV` object and fit it to the data.** Call the instance `cv_rfc`. 
 
 * Use the random forest classification estimator you instantiated in the cell above, the parameter grid dictionary constructed, and make sure to perform 5-fold cross validation. 
 * The fitting process should take 10 - 15 seconds to complete. 
 
 
-```
+```python
 # Replace None with appropriate code 
 cv_rfc = None 
 
 cv_rfc.fit(None, None)
 ```
 
-**2.5) What are the best training parameters found by GridSearchCV?** 
+**5) What are the best training parameters found by GridSearchCV?** 
 
 _Hint: Explore the documentation for GridSearchCV._ 
 
 
-```
-# Replace None with appropriate code 
-None 
+```python
+# Your code here
 ```
 
 In the cell below, we create a variable `best_model` that holds the best model found by the grid search.
 
 
-```
+```python
 best_model = cv_rfc.best_estimator_
 ```
 
 Next, we give you a function that creates a horizontal bar plot to visualize the feature importances of a model, sorted in descending order. 
 
 
-```
+```python
 import matplotlib.pyplot as plt 
 %matplotlib inline 
 
@@ -148,18 +146,18 @@ def create_plot_of_feature_importances(model, X):
     plt.xlabel('importance')
 ```
 
-**2.6) Create a plot of the best model's feature importances.** 
+**6) Create a plot of the best model's feature importances.** 
 
 _Hint: To create the plot, pass the appropriate parameters to the function above._
 
 
-```
-# Your code here.
+```python
+# Your code here
 ```
 
-**2.7) What are this model's top 3 features in order of descending importance?**
+**7) What are this model's top 3 features in order of descending importance?**
 
 
-```
-# Your answer here 
+```python
+# Your written answer here 
 ```
